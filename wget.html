@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wget - Beyond Linux From Scratch</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Load Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <!-- The title is added via CSS to match the Dark4chan style -->
+    </div>
+
+    <div id="nav">
+        <a href="#">Prev</a>
+        <a href="#">Samba-4.22.0</a>
+        <a href="#">Next</a>
+        <a href="#">Configuring the Linux Kernel for Wireless</a>
+        <a href="#">Up</a>
+        <a href="#">Home</a>
+    </div>
+
+    <div id="content">
+        <h1>Beyond Linux® From Scratch (System V Edition) - Version r12.3-157</h1>
+        <h2>Chapter 15. Networking Programs</h2>
+        <h3>Wget-1.25.0</h3>
+        <h4>Introduction to Wget</h4>
+        <p>The Wget package contains a utility useful for non-interactive downloading of files from the Web.</p>
+        <div class="note">
+            <strong>Note</strong>
+            <p>Development versions of BLFS may not build or run some packages properly if LFS or dependencies have been updated since the most recent stable versions of the books.</p>
+        </div>
+
+        <h4>Package Information</h4>
+        <ul>
+            <li><strong>Download (HTTP):</strong> <a href="https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz">https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz</a></li>
+            <li><strong>Download MD5 sum:</strong> c70ba58b36f944e8ba1d655ace552881</li>
+            <li><strong>Download size:</strong> 5.0 MB</li>
+            <li><strong>Estimated disk space required:</strong> 38 MB (add 27 MB for tests)</li>
+            <li><strong>Estimated build time:</strong> 0.3 SBU (add 0.4 SBU for tests)</li>
+        </ul>
+
+        <h4>Wget Dependencies</h4>
+        <h5>Recommended</h5>
+        <p><a href="#">libpsl-0.21.5</a></p>
+        <h5>Recommended at runtime</h5>
+        <p><a href="#">make-ca-1.15</a></p>
+        <h5>Optional</h5>
+        <p><a href="#">GnuTLS-3.8.9</a>, <a href="#">HTTP-Daemon-6.16</a> (for the test suite), <a href="#">IO-Socket-SSL-2.089</a> (for the test suite), <a href="#">libidn2-2.3.8</a>, <a href="#">pcre2-10.45</a>, and <a href="#">Valgrind-3.24.0</a> (for the test suite)</p>
+
+        <h4>Installation of Wget</h4>
+        <p>Install Wget by running the following commands:</p>
+        <pre>
+./configure --prefix=/usr      \
+            --sysconfdir=/etc  \
+            --with-ssl=openssl &&
+make
+        </pre>
+        <p>To test the results, issue: <code>make check</code>.</p>
+        <p>Some tests may fail when Valgrind tests are enabled.</p>
+        <p>Now, as the <code>root</code> user:</p>
+        <pre>
+make install
+        </pre>
+
+        <h4>Command Explanations</h4>
+        <p><code>--sysconfdir=/etc</code>: This relocates the configuration file from <code>/usr/etc</code> to <code>/etc</code>.</p>
+        <p><code>--with-ssl=openssl</code>: This allows the program to use openssl instead of GnuTLS-3.8.9.</p>
+        <p><code>--enable-valgrind-tests</code>: This allows the tests to be run under valgrind.</p>
+
+        <h4>Configuring Wget</h4>
+        <h5>Config Files</h5>
+        <p><code>/etc/wgetrc</code> and <code>~/.wgetrc</code></p>
+
+        <h4>Contents</h4>
+        <dl>
+            <dt>Installed Program:</dt>
+            <dd>wget</dd>
+            <dt>Installed Libraries:</dt>
+            <dd>None</dd>
+            <dt>Installed Directories:</dt>
+            <dd>None</dd>
+        </dl>
+
+        <h5>Short Descriptions</h5>
+        <dl>
+            <dt>wget</dt>
+            <dd>retrieves files from the Web using the HTTP, HTTPS and FTP protocols. It is designed to be non-interactive, for background or unattended operations</dd>
+        </dl>
+    </div>
+
+    <div id="footer">
+        <p>© 1998-2025 Gerard Beekmans. Web design by Jeremy Huntwork & Matthew Burgess.</p>
+    </div>
+</body>
+</html>
